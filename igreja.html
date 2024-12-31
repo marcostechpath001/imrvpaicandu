@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Igreja - IMRV</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Cabeçalho fixo com menu */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+/* Contêiner centralizado no cabeçalho */
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Logo */
+.header .logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Menu de navegação */
+.nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #3700ff;
+  transform: scale(1.1);
+}
+
+/* Botão destacado no menu */
+.nav ul li a.highlight {
+  background: linear-gradient(135deg, #006eff, #4c00ff);
+  padding: 8px 15px;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(255, 107, 107, 0.5);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.nav ul li a.highlight:hover {
+  background: linear-gradient(135deg, #002fff, #2f00ff);
+  box-shadow: 0 5px 15px rgba(0, 132, 255, 0.8);
+}
+
+/* Conteúdo principal */
+.content {
+  margin-top: 100px; /* Para evitar sobreposição do cabeçalho fixo */
+  padding: 20px;
+}
+
+.content h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.history, .location {
+  margin-bottom: 40px;
+}
+
+.history h2, .location h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.history p, .location p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.images {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.images img {
+  max-width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.buttons a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #2c3e50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.buttons a:hover {
+  background-color: #34495e;
+}
+
+.footer {
+  background-color: rgb(0, 0, 0); /* Cor de fundo escura */
+  color: #fff; /* Texto em branco */
+  padding: 20px 10px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  font-size: 0.9em;
+  position: relative; /* Mantém o footer estático ou fixo conforme necessário */
+}
+
+.footer a {
+  color: #1abc9c; /* Links com uma cor que contrasta */
+  text-decoration: none; /* Remove sublinhado */
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #16a085; /* Cor mais intensa ao passar o mouse */
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  margin: 0 10px;
+  color: #fff; /* Ícones sociais em branco */
+  font-size: 1.2em; /* Tamanho dos ícones */
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #1abc9c; /* Muda cor ao passar o mouse */
+  transform: scale(1.2); /* Aumenta tamanho */
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header .logo {
+    max-width: 150px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+  }
+
+  .nav ul li a {
+    font-size: 16px;
+  }
+
+  .content h1 {
+    font-size: 2em;
+  }
+
+  .history h2, .location h2 {
+    font-size: 1.8em;
+  }
+
+  .history p, .location p {
+    font-size: 1em;
+  }
+
+  .images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .images img {
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .buttons a {
+    font-size: 1em;
+    padding: 8px 15px;
+    margin: 10px 5px;
+  }
+
+  .footer {
+    font-size: 0.8em;
+    padding: 15px 5px;
+  }
+
+  .footer .social-icons a {
+    font-size: 1em;
+  }
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <!-- Logo da Igreja -->
+      <img src="./image/logoigreja.png" alt="Logo da Igreja" class="logo">
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assista.html">Assista Online</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="cursoseeventos.html">Cursos e Eventos</a></li>
+          <li><a href="celulas.html">Células</a></li>
+          <li><a href="doar.html" class="highlight">Doar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="content">
+    <h1>A Igreja</h1>
+
+    <div class="history">
+      <h2>Nossa História</h2>
+      <p>
+        Fundada em 14 de maio de 2018, nossa igreja começou como um pequeno grupo de pessoas dedicadas a compartilhar o amor de Deus.
+        Ao longo dos anos, crescemos e nos tornamos uma comunidade vibrante e acolhedora, comprometida com a fé, o serviço e o ensino da Palavra.
+      </p>
+      <div class="images">
+        <img src="./image/igreja-antes.jpg" alt="Foto de como era antes">
+        <img src="./image/igreja-agora.jpg" alt="Foto de como é agora">
+      </div>
+    </div>
+
+    <div class="location">
+      <h2>Onde Estamos</h2>
+      <p>
+        Nossa igreja está localizada em Avenida Ivai, 1304 - Paiçandu, PR. Venha nos visitar e participar de nossos cultos e eventos!
+      </p>
+    </div>
+
+    <div class="buttons">
+      <a href="equipe-pastoral.html">Equipe Pastoral</a>
+      <a href="ministerios.html">Ministérios</a>
+    </div>
+  </div>
+
+    <footer class="footer">
+        <p>&copy 2024 Igreja Ministério Resgatando Vidas. Todos os Direitos Reservados</p>
+    </footer>
+</body>
+</html>
