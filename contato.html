@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - IMRV</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.header .logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Menu de navegação */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #3700ff;
+  transform: scale(1.1);
+}
+
+.nav ul li a.highlight {
+  background: linear-gradient(135deg, #006eff, #4c00ff);
+  padding: 8px 15px;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(255, 107, 107, 0.5);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.nav ul li a.highlight:hover {
+  background: linear-gradient(135deg, #002fff, #2f00ff);
+  box-shadow: 0 5px 15px rgba(0, 132, 255, 0.8);
+}
+.hamburger {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .content {
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    /* Seção Contato */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    #contato {
+      background: #696565;
+    }
+
+    .info {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .info p {
+      margin-bottom: 10px;
+      color: #e0e0e0;
+    }
+
+    .info a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #e0e0e0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .header .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .header .logo {
+      max-width: 150px;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  
+    .nav ul li {
+      margin: 10px 0;
+    }
+  
+    .nav ul li a {
+      font-size: 16px;
+    }
+  
+    .content h1 {
+      font-size: 2em;
+    }
+  
+    .history h2, .location h2 {
+      font-size: 1.8em;
+    }
+  
+    .history p, .location p {
+      font-size: 1em;
+    }
+  
+    .images {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .images img {
+      max-width: 90%;
+      margin-bottom: 15px;
+    }
+  
+    .buttons a {
+      font-size: 1em;
+      padding: 8px 15px;
+      margin: 10px 5px;
+    }
+  
+    .footer {
+      font-size: 0.8em;
+      padding: 15px 5px;
+    }
+  
+    .footer .social-icons a {
+      font-size: 1em;
+    }
+  }
+  .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav ul li {
+        margin: 10px 0;
+      }
+
+      .content h1 {
+        font-size: 2em;
+      }
+
+      .images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .images img {
+        max-width: 90%;
+      }
+
+      .buttons a {
+        font-size: 1em;
+        padding: 8px 15px;
+      }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector(".nav");
+
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    });
+    </script>
+    </head>
+    <body>
+  <header class="header">
+    <div class="container">
+      <img src="./image/logoigreja.png" alt="Logo da Igreja" class="logo">
+      <div class="hamburger">&#9776;</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="igreja.html">A Igreja</a></li>
+          <li><a href="assista.html">Assista Online</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="cursoseeventos.html">Cursos e Eventos</a></li>
+          <li><a href="celulas.html">Células</a></li>
+          <li><a href="doar.html" class="highlight">Doar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Contato -->
+  <section id="contato">
+    <h2 class="section-title">Entre em contato com a gente</h2>
+    <div class="info">
+      <h3>Informações</h3>
+      <p>Email: <a href="mailto:contato@imrvpaicandu.com.br">contato@imrvpaicandu.com.br</a></p>
+      <p>Telefone: <a href="tel:+5544991559263">(44) 99155-9263</a></p>
+      <h3>Redes Sociais</h3>
+      <p>
+        <a href="https://www.youtube.com/@imrvpaicandu77" target="_blank">Youtube</a> |
+        <a href="https://www.instagram.com/imrvpaicandu/" target="_blank">Instagram</a> |
+        <a href="https://www.facebook.com/resgatando19" target="_blank">Facebook</a>
+      </p>
+    </div>
+    <!-- Formulário do Google -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJaoG9l4dhT1XHTYZMK_nZTITHXAWRg-HV7fVup2JJu7Pr7Q/viewform?embedded=true" width="640" height="824" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+      
+    </iframe>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 Igreja Ministério Resgatando Vidas. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

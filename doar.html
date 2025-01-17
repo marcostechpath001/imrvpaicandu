@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doar - Igreja</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Cabeçalho fixo com menu */
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .header .logo {
+      max-width: 200px;
+      height: auto;
+    }
+
+    /* Menu de navegação */
+    .nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav ul li {
+      margin: 0 15px;
+    }
+
+    .nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav ul li a:hover {
+      color: #3700ff;
+      transform: scale(1.1);
+    }
+
+    .nav ul li a.highlight {
+      background: linear-gradient(135deg, #006eff, #4c00ff);
+      padding: 8px 15px;
+      border-radius: 50px;
+      box-shadow: 0 3px 6px rgba(255, 107, 107, 0.5);
+      color: #fff;
+      transition: all 0.3s;
+    }
+
+    .nav ul li a.highlight:hover {
+      background: linear-gradient(135deg, #002fff, #2f00ff);
+      box-shadow: 0 5px 15px rgba(0, 132, 255, 0.8);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .content {
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background: #2600ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button:hover {
+            background: #0084ff;
+        }
+
+        .payment-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-info h3 {
+            margin-top: 0;
+        }
+
+        .payment-info p {
+            margin: 5px 0;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            display: block;
+            margin: 10px 0;
+            color: #2600ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav ul li {
+                margin: 10px 0;
+            }
+
+            .header .logo {
+                margin-bottom: 10px;
+            }
+        }
+        .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav ul li {
+        margin: 10px 0;
+      }
+
+      .content h1 {
+        font-size: 2em;
+      }
+
+      .images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .images img {
+        max-width: 90%;
+      }
+
+      .buttons a {
+        font-size: 1em;
+        padding: 8px 15px;
+      }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector(".nav");
+
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    });
+  </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          <img src="./image/logoigreja.png" alt="Logo da Igreja" class="logo">
+          <div class="hamburger">&#9776;</div>
+          <nav class="nav">
+            <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="igreja.html">A Igreja</a></li>
+                    <li><a href="assista.html">Assista Online</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="celulas.html">Células</a></li>
+                    <li><a href="cursoseeventos.html">Cursos e Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Doar para a Obra de Deus</h2>
+        <p>Sua contribuição faz a diferença e ajuda a levar a Palavra de Deus a mais vidas. Apoie nossos projetos sociais, missões e ações da igreja.</p>
+
+        <div class="payment-info">
+            <h3>Transferência Bancária</h3>
+            <p><strong>Banco:</strong> Sicredi</p>
+            <p><strong>Agência:</strong>0718</p>
+            <p><strong>Conta:</strong> 23930_7</p>
+            <p><strong>Titular:</strong> Igreja Ministério Resgatando Vidas</p>
+
+            <h3>Chave Pix</h3>
+            <p><strong>CNPJ</strong> 42.080.316/0001.80</p>
+        </div>
+
+        <div class="links">
+            <a href="https://wa.me/5544991559263" target="_blank">Envie o comprovante por aqui</a>
+            <a href="mailto:kadoshdecristo@gmail.com" target="_blank">Envie-nos um e-mail</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Igreja Ministério Resgatando Vidas. Todos os Direitos Reservados</p>
+    </footer>
+</body>
+</html>

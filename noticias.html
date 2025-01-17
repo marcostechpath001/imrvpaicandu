@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias da Igreja - IMRV</title>
+  <style>
+    /* Estilo global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.header .logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Menu de navegação */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #3700ff;
+  transform: scale(1.1);
+}
+
+.nav ul li a.highlight {
+  background: linear-gradient(135deg, #006eff, #4c00ff);
+  padding: 8px 15px;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(255, 107, 107, 0.5);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.nav ul li a.highlight:hover {
+  background: linear-gradient(135deg, #002fff, #2f00ff);
+  box-shadow: 0 5px 15px rgba(0, 132, 255, 0.8);
+}
+.hamburger {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .content {
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    h2 {
+      text-align: center;
+      color: #003cff;
+      margin-bottom: 20px;
+    }
+    .descricao {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .noticia-item {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .noticia-item h3 {
+      color: #0400ff;
+      margin-bottom: 10px;
+    }
+    .noticia-item p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+    .noticia-item .data {
+      font-weight: bold;
+      color: #337ab7;
+    }
+    .noticia-item .link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #002fff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .noticia-item .link:hover {
+      background-color: #006eff;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .footer a {
+      color: #1abc9c;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #16a085;
+    }
+/* Estilo responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+  .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav ul li {
+        margin: 10px 0;
+      }
+
+      .content h1 {
+        font-size: 2em;
+      }
+
+      .images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .images img {
+        max-width: 90%;
+      }
+
+      .buttons a {
+        font-size: 1em;
+        padding: 8px 15px;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector(".nav");
+
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="./image/logoigreja.png" alt="Logo da Igreja" class="logo">
+      <div class="hamburger">&#9776;</div>
+      <nav class="nav">
+        <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="igreja.html">A Igreja</a></li>
+                <li><a href="assista.html">Assista Online</a></li>
+                <li><a href="cursoseeventos.html">Cursos e Eventos</a></li>
+                <li><a href="celulas.html">Células</a></li>
+                <li><a href="doar.html" class="highlight">Doar</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+  <div class="container">
+    <h2>Notícias da Igreja</h2>
+    <p class="descricao">Fique por dentro das últimas novidades e acontecimentos da nossa igreja.</p>
+
+    <div class="noticia-item">
+      <h3>Reforma do Templo: Novo Ambiente de Oração</h3>
+      <p>Descrição: A nossa igreja está passando por uma grande reforma para oferecer um ambiente mais confortável e acolhedor para todos os membros. A inauguração será no próximo mês.</p>
+      <p class="data">Procure a secretaria da igreja</p>
+      <a href="contato.html" class="link" target="_blank">Falar com secretaria</a>
+    </div>
+
+    <div class="noticia-item">
+      <h3>A Igreja Ministério Resgatando Vidas encerra o ano de 2024 com 6 batizados</h3>
+      <p>Na noite da virada do ano, 6 almas resolveram descer as àguas do batismo.</p>
+      <p class="data">Batismo realizado no dia 31/12/2025</p>
+      <a href="cursoseeventos.html" class="link" target="_blank">Saiba mais</a>
+    </div>
+
+    <div class="noticia-item">
+      <h3>Campanha de Arrecadação de Alimentos</h3>
+      <p>Contribua, faça uma família feliz</p>
+      <a href="doar.html" class="link" target="_blank">Contribua agora</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Igreja Ministério Resgatando Vidas. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

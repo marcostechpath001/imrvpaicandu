@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Células - IMRV</title>
+  <style>
+     body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.header .logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Menu de navegação */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #3700ff;
+  transform: scale(1.1);
+}
+
+.nav ul li a.highlight {
+  background: linear-gradient(135deg, #006eff, #4c00ff);
+  padding: 8px 15px;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(255, 107, 107, 0.5);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.nav ul li a.highlight:hover {
+  background: linear-gradient(135deg, #002fff, #2f00ff);
+  box-shadow: 0 5px 15px rgba(0, 132, 255, 0.8);
+}
+.hamburger {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .content {
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .cell-group {
+      background-color: #fff;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .cell-group h3 {
+      margin: 0 0 0.5rem;
+    }
+    .find-button {
+      display: block;
+      width: 100%;
+      background-color: #e63946;
+      color: white;
+      padding: 0.75rem;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .find-button:hover {
+      background-color: #d62828;
+    }
+    .result {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .footer a {
+      color: #1abc9c;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #16a085;
+    }
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .header .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .header .logo {
+      max-width: 150px;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  
+    .nav ul li {
+      margin: 10px 0;
+    }
+  
+    .nav ul li a {
+      font-size: 16px;
+    }
+  
+    .content h1 {
+      font-size: 2em;
+    }
+  
+    .history h2, .location h2 {
+      font-size: 1.8em;
+    }
+  
+    .history p, .location p {
+      font-size: 1em;
+    }
+  
+    .images {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .images img {
+      max-width: 90%;
+      margin-bottom: 15px;
+    }
+  
+    .buttons a {
+      font-size: 1em;
+      padding: 8px 15px;
+      margin: 10px 5px;
+    }
+  
+    .footer {
+      font-size: 0.8em;
+      padding: 15px 5px;
+    }
+  
+    .footer .social-icons a {
+      font-size: 1em;
+    }
+  }
+  .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav ul li {
+        margin: 10px 0;
+      }
+
+      .content h1 {
+        font-size: 2em;
+      }
+
+      .images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .images img {
+        max-width: 90%;
+      }
+
+      .buttons a {
+        font-size: 1em;
+        padding: 8px 15px;
+      }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector(".nav");
+
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="./image/logoigreja.png" alt="Logo da Igreja" class="logo">
+      <div class="hamburger">&#9776;</div>
+      <nav class="nav">
+        <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="igreja.html">A Igreja</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="cursoseeventos.html">Cursos e Eventos</a></li>
+                <li><a href="assista.html">Assista Online</a></li>
+                <li><a href="doar.html" class="highlight">Doar</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+  <div class="container">
+    <h2>Pequenos Grupos</h2>
+    <p>As células são pequenos grupos que se reúnem semanalmente. Encontre a mais próxima de você!</p>
+
+    <div class="cell-group">
+      <h3>Congregação Abraão</h3>
+      <p><strong>Líder:</strong> Pastor Maurício e Pastora Cidinha & Diacono Jefferson e Diaconisa Ana</p>
+      <p><strong>Dia e Horário:</strong> Quarta-feira e sexta-feira às 20:00</p>
+      <p><strong>Local:</strong> Rua Edson Marques, 387</p>
+      <p><strong>Bairro:</strong> Madrid</p>
+      <p><strong>Cidade:</strong> Paiçandu-PR</p>
+    </div>
+
+
+    <div class="cell-group">
+      <h3>Célula Isaac</h3>
+      <p><strong>Líder:</strong> Thiago Santos</p>
+      <p><strong>Dia e Horário:</strong> Quarta-feira às 20:00</p>
+      <p><strong>Local:</strong> Local a definir</p>
+      <p><strong>Bairro:</strong> Bairro a definir</p>
+      <p><strong>Cidade:</strong> Paiçandu-PR</p>
+      <p><strong>Para mais informações:</strong> (44) 98809-6880 - Thiago Santos</p>
+    </div>
+
+  <footer class="footer">
+    <p>&copy; 2024 Igreja Ministério Resgatando Vidas. Todos os Direitos Reservados</p>
+  </footer>
+  <script>
+    const cells = [
+      { name: "Célula 1 - Centro", coordinates: [-23.55052, -46.633308], leader: "João Silva", location: "Rua das Flores, 123" },
+      { name: "Célula 2 - Zona Norte", coordinates: [-23.564211, -46.652633], leader: "Maria Souza", location: "Av. Paulista, 456" },
+      { name: "Célula 3 - Zona Sul", coordinates: [-23.56791, -46.647601], leader: "Carlos Lima", location: "Rua Augusta, 789" }
+    ];
+
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371; // Radius of Earth in km
+      const dLat = ((lat2 - lat1) * Math.PI) / 180;
+      const dLon = ((lon2 - lon1) * Math.PI) / 180;
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c; // Distance in km
+    }
+
+    function findNearestCell() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const userLat = position.coords.latitude;
+            const userLon = position.coords.longitude;
+
+            let nearestCell = null;
+            let shortestDistance = Infinity;
+
+            cells.forEach((cell) => {
+              const distance = calculateDistance(userLat, userLon, cell.coordinates[0], cell.coordinates[1]);
+              if (distance < shortestDistance) {
+                shortestDistance = distance;
+                nearestCell = cell;
+              }
+            });
+
+            if (nearestCell) {
+              document.getElementById("nearest-cell").innerHTML = `
+                <strong>${nearestCell.name}</strong><br>
+                <strong>Líder:</strong> ${nearestCell.leader}<br>
+                <strong>Local:</strong> ${nearestCell.location}<br>
+                <strong>Distância:</strong> ${shortestDistance.toFixed(2)} km
+              `;
+              document.getElementById("result").style.display = "block";
+            }
+          },
+          (error) => {
+            alert("Não foi possível acessar sua localização. Certifique-se de que o GPS está ativado.");
+          }
+        );
+      } else {
+        alert("Geolocalização não é suportada pelo seu navegador.");
+      }
+    }
+  </script>
+</body>
+</html>

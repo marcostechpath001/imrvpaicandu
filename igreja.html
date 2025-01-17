@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Igreja - IMRV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Cabeçalho fixo com menu */
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .header .logo {
+      max-width: 200px;
+      height: auto;
+    }
+
+    /* Menu de navegação */
+    .nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav ul li {
+      margin: 0 15px;
+    }
+
+    .nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav ul li a:hover {
+      color: #3700ff;
+      transform: scale(1.1);
+    }
+
+    .nav ul li a.highlight {
+      background: linear-gradient(135deg, #006eff, #4c00ff);
+      padding: 8px 15px;
+      border-radius: 50px;
+      box-shadow: 0 3px 6px rgba(255, 107, 107, 0.5);
+      color: #fff;
+      transition: all 0.3s;
+    }
+
+    .nav ul li a.highlight:hover {
+      background: linear-gradient(135deg, #002fff, #2f00ff);
+      box-shadow: 0 5px 15px rgba(0, 132, 255, 0.8);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .content {
+      margin-top: 100px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .history, .location {
+      margin-bottom: 40px;
+    }
+
+    .history h2, .location h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .history p, .location p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .images {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .images img {
+      max-width: 45%;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .images p {
+      font-size: 1em;
+      color: #555;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #fff;
+      background-color: #2c3e50;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 0 10px;
+      transition: background-color 0.3s;
+    }
+
+    .buttons a:hover {
+      background-color: #34495e;
+    }
+
+    .map-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #ccc;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .footer a {
+      color: #1abc9c;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #16a085;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav ul li {
+        margin: 10px 0;
+      }
+
+      .content h1 {
+        font-size: 2em;
+      }
+
+      .images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .images img {
+        max-width: 90%;
+      }
+
+      .buttons a {
+        font-size: 1em;
+        padding: 8px 15px;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector(".nav");
+
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="./image/logoigreja.png" alt="Logo da Igreja" class="logo">
+      <div class="hamburger">&#9776;</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assista.html">Assista Online</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="cursoseeventos.html">Cursos e Eventos</a></li>
+          <li><a href="celulas.html">Células</a></li>
+          <li><a href="doar.html" class="highlight">Doar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="content">
+    <h1>A Igreja</h1>
+
+    <div class="history">
+      <h2>Nossa História</h2>
+      <p>Fundada em 14 de maio de 2018, nossa igreja começou como um pequeno grupo de pessoas dedicadas a compartilhar o amor de Deus.</p>
+      <div class="images">
+        <div>
+          <p>Como era antes</p>
+          <img src="./image/igreja-antes.jpg" alt="Foto de como era antes">
+        </div>
+        <div>
+          <p>Como é agora</p>
+          <img src="./image/igreja-agora.jpg" alt="Foto de como é agora">
+        </div>
+      </div>
+    </div>
+
+    <div class="location">
+      <h2>Onde Estamos</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d936988.755714642!2d-53.20001945312497!3d-23.456412399999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ed290005e17901%3A0x6277fd50ba93c053!2sIgreja%20Minist%C3%A9rio%20Resgatando%20Vidas!5e0!3m2!1sen!2sbr!4v1736275496241!5m2!1sen!2sbr" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <p>Estamos Localizados na Avenida Ivaí, 1304 - Centro, Paiçandu - PR</p>
+    </div>
+
+    <div class="buttons">
+      <a href="equipe-pastoral.html">Equipe Pastoral</a>
+      <a href="ministerios.html">Ministérios</a>
+      <a href="agenda-semanal.html">Agenda Semanal</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy 2025 Igreja Ministério Resgatando Vidas. Todos os Direitos Reservados</p>
+  </footer>
+</body>
+</html>
